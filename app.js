@@ -1,5 +1,6 @@
 (function () {
   const STORAGE_KEY = "hotwheel-mario-kart-state-v3";
+  const LEGACY_STORAGE_KEYS = ["hotwheel-mario-kart-state-v2"];
   const INITIAL_RATING = 1500;
   const K_FACTOR = 24;
   const LANES = [1, 2, 3, 4, 5];
@@ -47,7 +48,20 @@
 
   function loadState() {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return baseState();
+    if (!raw) {
+      for (const legacyKey of LEGACY_STORAGE_KEYS) {
+        const legacyRaw = localStorage.getItem(legacyKey);
+        if (!legacyRaw) continue;
+        try {
+          const migrated = normalizeState(JSON.parse(legacyRaw));
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
+          return migrated;
+        } catch (error) {
+          console.error(`Failed to migrate legacy state from ${legacyKey}`, error);
+        }
+      }
+      return baseState();
+    }
     try {
       return normalizeState(JSON.parse(raw));
     } catch (error) {
@@ -158,6 +172,14 @@
 
   async function loadRepositoryState(preferNewer = true) {
     const repoState = await fetchRepositoryState();
+    const hasRepositoryData =
+      Object.keys(repoState.collection || {}).length > 0 ||
+      (repoState.historicalEvents || []).length > 0 ||
+      repoState.activeTournament !== null ||
+      Object.values(repoState.ratings || {}).some((value) => value !== INITIAL_RATING);
+    if (!hasRepositoryData) {
+      return false;
+    }
     if (preferNewer) {
       const localTs = timestampOf(state._meta.updatedAt);
       const repoTs = timestampOf(repoState._meta.updatedAt);

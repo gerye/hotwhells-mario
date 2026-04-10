@@ -1,0 +1,215 @@
+{
+  "collection": {
+    "hdb28-kart-45": {
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": "",
+      "status": "planned"
+    },
+    "baby-mario-standard-kart-standard-kart-4-pack-9-kart-43": {
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "gbg26-kart-1": {
+      "collected": true,
+      "collectedAt": "2026-04-05",
+      "collectionNote": "箕面萱野西松屋 746"
+    },
+    "mario-standard-kart-blue-standard-kart-rainbow-road-track-set-kart-2": {
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "grn23-kart-30": {
+      "collected": true,
+      "collectedAt": "2026-04-08",
+      "collectionNote": "大日堂吉诃德 770"
+    },
+    "custom-empty-standard-kart": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-10",
+      "collectionNote": "万博爱电王 460"
+    },
+    "hdb34-kart-3": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "glp38-kart-25": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "gjh63-kart-18": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "gvd33-glider-12": {
+      "status": "uncollected",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "gbg28-kart-15": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "gjh54-kart-36": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "grn17-kart-9": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "grn12-kart-44": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "glp37-kart-10": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "gbg29-kart-27": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "gbg30-kart-20": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "gjh59-kart-54": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "grn24-kart-39": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "grn25-kart-50": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    },
+    "grn20-kart-22": {
+      "status": "planned",
+      "collected": false,
+      "collectedAt": "",
+      "collectionNote": ""
+    }
+  },
+  "ratings": {
+    "custom-empty-standard-kart": 1500,
+    "gbg26-kart-1": 1500,
+    "mario-standard-kart-blue-standard-kart-rainbow-road-track-set-kart-2": 1500,
+    "hdb34-kart-3": 1500,
+    "mario-mach-8-standard-kart-mario-circuit-track-set-costco-exclusive-kart-4": 1500,
+    "mario-badwagon-standard-kart-4-pack-2-kart-5": 1500,
+    "hdb36-kart-6": 1500,
+    "mario-sneeker-standard-kart-bullet-bill-play-set-kart-7": 1500,
+    "gjh62-kart-8": 1500,
+    "grn17-kart-9": 1500,
+    "glp37-kart-10": 1500,
+    "gbg27-kart-11": 1500,
+    "grn18-kart-12": 1500,
+    "luigi-p-wing-slick-kart-4-pack-4-kart-13": 1500,
+    "luigi-pipe-frame-standard-snes-kart-4-pack-7-kart-14": 1500,
+    "gbg28-kart-15": 1500,
+    "gjh58-kart-16": 1500,
+    "grn14-kart-17": 1500,
+    "gjh63-kart-18": 1500,
+    "hdb35-kart-19": 1500,
+    "gbg30-kart-20": 1500,
+    "grn26-kart-21": 1500,
+    "grn20-kart-22": 1500,
+    "gbg31-kart-23": 1500,
+    "hdb27-kart-24": 1500,
+    "glp38-kart-25": 1500,
+    "glp39-kart-26": 1500,
+    "gbg29-kart-27": 1500,
+    "grn19-kart-28": 1500,
+    "gpd90-kart-29": 1500,
+    "grn23-kart-30": 1500,
+    "gbg35-kart-31": 1500,
+    "orange-yoshi-pipe-frame-standard-snes-kart-4-pack-6-kart-32": 1500,
+    "black-yoshi-p-wing-slick-kart-4-pack-1-kart-33": 1500,
+    "gbg32-kart-34": 1500,
+    "grn22-kart-35": 1500,
+    "gjh54-kart-36": 1500,
+    "gbg33-kart-37": 1500,
+    "hdb32-kart-38": 1500,
+    "grn24-kart-39": 1500,
+    "gjh57-kart-40": 1500,
+    "diddy-kong-mach-8-standard-kart-4-pack-5-kart-41": 1500,
+    "grn15-kart-42": 1500,
+    "baby-mario-standard-kart-standard-kart-4-pack-9-kart-43": 1500,
+    "grn12-kart-44": 1500,
+    "hdb28-kart-45": 1500,
+    "hdb30-kart-46": 1500,
+    "koopa-troopa-mach-8-standard-kart-4-pack-8-kart-47": 1500,
+    "ggv85-kart-48": 1500,
+    "grn16-kart-49": 1500,
+    "grn25-kart-50": 1500,
+    "gjh61-kart-51": 1500,
+    "grn21-kart-52": 1500,
+    "orange-shy-guy-standard-kart-cyber-slick-kart-4-pack-3-kart-53": 1500,
+    "gjh59-kart-54": 1500,
+    "king-boo-standard-kart-standard-kart-rainbow-road-track-set-kart-55": 1500,
+    "gjh55-kart-56": 1500,
+    "hdb31-kart-57": 1500,
+    "grn13-kart-58": 1500,
+    "hdb29-kart-59": 1500,
+    "kamek-standard-kart-standard-kart-bowser-s-castle-raceway-track-set-kart-60": 1500,
+    "gvd31-glider-1": 1500,
+    "mario-standard-kart-standard-parafoil-8-pack-1-glider-2": 1500,
+    "hdb40-glider-3": 1500,
+    "gvd35-glider-4": 1500,
+    "gvd36-glider-5": 1500,
+    "hdb41-glider-6": 1500,
+    "gvd34-glider-7": 1500,
+    "gvd32-glider-8": 1500,
+    "red-yoshi-standard-kart-standard-parafoil-8-pack-2-glider-9": 1500,
+    "red-yoshi-p-wing-slick-super-glider-8-pack-1-glider-10": 1500,
+    "hdb44-glider-11": 1500,
+    "gvd33-glider-12": 1500,
+    "hdb47-glider-13": 1500,
+    "gvd38-glider-14": 1500,
+    "hdb42-glider-15": 1500,
+    "waluigi-b-dasher-blue-standard-super-glider-3-pack-1-glider-16": 1500,
+    "hdb43-glider-17": 1500,
+    "gvd37-glider-18": 1500,
+    "hdb45-glider-19": 1500,
+    "hdb46-glider-20": 1500,
+    "tanooki-mario-sports-coupe-slick-super-glider-3-pack-2-glider-21": 1500
+  },
+  "activeTournament": null,
+  "historicalEvents": [],
+  "_meta": {
+    "updatedAt": null
+  }
+}
