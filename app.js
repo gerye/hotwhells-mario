@@ -162,6 +162,15 @@
     return value ? new Date(value).getTime() : 0;
   }
 
+  function hasMeaningfulState(candidate) {
+    return (
+      Object.keys(candidate.collection || {}).length > 0 ||
+      (candidate.historicalEvents || []).length > 0 ||
+      candidate.activeTournament !== null ||
+      Object.values(candidate.ratings || {}).some((value) => value !== INITIAL_RATING)
+    );
+  }
+
   async function fetchRepositoryState() {
     const response = await fetch(REPOSITORY_SAVE_PATH, { cache: "no-store" });
     if (!response.ok) {
@@ -172,13 +181,16 @@
 
   async function loadRepositoryState(preferNewer = true) {
     const repoState = await fetchRepositoryState();
-    const hasRepositoryData =
-      Object.keys(repoState.collection || {}).length > 0 ||
-      (repoState.historicalEvents || []).length > 0 ||
-      repoState.activeTournament !== null ||
-      Object.values(repoState.ratings || {}).some((value) => value !== INITIAL_RATING);
+    const hasRepositoryData = hasMeaningfulState(repoState);
     if (!hasRepositoryData) {
       return false;
+    }
+    const localHasData = hasMeaningfulState(state);
+    if (!localHasData) {
+      state = repoState;
+      saveState({ touch: false });
+      render();
+      return true;
     }
     if (preferNewer) {
       const localTs = timestampOf(state._meta.updatedAt);
