@@ -3,6 +3,7 @@
   const INITIAL_RATING = 1500;
   const K_FACTOR = 24;
   const LANES = [1, 2, 3, 4, 5];
+  const REPOSITORY_SAVE_PATH = "./data/save-state.json";
 
   const dataset = window.HOT_WHEELS_COLLECTION || { entries: [], sourceUrl: "" };
   const baseEntries = dataset.entries || [];
@@ -17,6 +18,7 @@
     collected: [],
   };
   let state = loadState();
+  let repositoryFileHandle = null;
 
   function baseState() {
     return {
@@ -140,6 +142,63 @@
     state = normalizeState(JSON.parse(text));
     saveState({ touch: false });
     render();
+  }
+
+  function timestampOf(value) {
+    return value ? new Date(value).getTime() : 0;
+  }
+
+  async function fetchRepositoryState() {
+    const response = await fetch(REPOSITORY_SAVE_PATH, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`无法读取仓库存档：${response.status}`);
+    }
+    return normalizeState(await response.json());
+  }
+
+  async function loadRepositoryState(preferNewer = true) {
+    const repoState = await fetchRepositoryState();
+    if (preferNewer) {
+      const localTs = timestampOf(state._meta.updatedAt);
+      const repoTs = timestampOf(repoState._meta.updatedAt);
+      if (repoTs < localTs) {
+        return false;
+      }
+    }
+    state = repoState;
+    saveState({ touch: false });
+    render();
+    return true;
+  }
+
+  async function saveRepositoryStateToFile() {
+    const content = `${JSON.stringify(state, null, 2)}\n`;
+    if ("showSaveFilePicker" in window) {
+      if (!repositoryFileHandle) {
+        repositoryFileHandle = await window.showSaveFilePicker({
+          suggestedName: "save-state.json",
+          types: [
+            {
+              description: "JSON",
+              accept: { "application/json": [".json"] },
+            },
+          ],
+        });
+      }
+      const writable = await repositoryFileHandle.createWritable();
+      await writable.write(content);
+      await writable.close();
+      return "已写入本地 save-state.json，请继续 git add / commit / push。";
+    }
+
+    const blob = new Blob([content], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "save-state.json";
+    link.click();
+    URL.revokeObjectURL(url);
+    return "浏览器不支持直接覆盖文件，已下载 save-state.json，请手动替换到 data 目录后再 git push。";
   }
 
   function vehicleVisual(entry) {
@@ -664,7 +723,7 @@
     const tab = document.getElementById("tab-ratings");
     const collected = sortByRating(collectedEntries());
     const history = state.historicalEvents;
-    tab.innerHTML = `<div class="grid two"><div class="control-card"><h2>收藏车辆等级分榜</h2><p class="muted">这里只显示已收藏车辆。计划收集不会出现在这里。</p><div class="table-wrap" style="margin-top:14px"><table class="standings-table"><thead><tr><th>排名</th><th>选手</th><th>车辆</th><th>等级分</th><th>收藏时间</th></tr></thead><tbody>${collected.map((entry, index) => `<tr><td>${index + 1}</td><td>${entry.character}</td><td><div class="table-entity vehicle-cell"><div>${vehicleVisual(entry)}</div><div class="muted small">${entry.vehicle} / ${entry.tires}${entry.glider ? ` / ${entry.glider}` : ""}</div></div></td><td>${formatRating(entry.rating)}</td><td>${formatDateOnly(entry.collectedAt)}</td></tr>`).join("")}</tbody></table></div></div><div class="control-card"><h2>数据工具</h2><p class="muted">纯 GitHub Pages 版本。你可以导出 JSON，到另一台设备再导入，手动同步数据库。</p><div class="toolbar" style="margin-top:14px"><button class="secondary-btn" data-action="export-state">导出全部数据</button><button class="secondary-btn" data-action="trigger-import">导入 JSON</button><button class="secondary-btn" data-action="reset-ratings">等级分恢复 1500</button><button class="danger-btn" data-action="clear-history">一键清除历史</button></div><input id="import-json-input" type="file" accept="application/json,.json" hidden /></div></div><div class="section-title" style="margin-top:22px"><div><h3>赛事历史</h3><p class="muted">历史记录也会被一起导出到 JSON。</p></div></div><div class="history-grid">${history.length ? history.map((event) => `<article class="history-card"><h3>${event.name}</h3><p class="muted small">创建 ${formatDateTime(event.createdAt)}${event.completedAt ? `，完赛 ${formatDateTime(event.completedAt)}` : "，尚未完赛"}</p><p class="muted small">参赛 ${event.participantIds.length} 车 / 轮次 ${event.rounds.length} / 计划 ${event.totalRounds}</p><div class="small">${standingsFor(event, false).filter((item) => item.entry.collected).slice(0, 3).map((item, index) => `<div>${index + 1}. ${item.entry.character} / ${item.entry.vehicle}${item.entry.glider ? ` + ${item.entry.glider}` : ""} (${formatScore(item.eventPoints)})</div>`).join("") || "该历史赛事中的车辆当前都未标记为收藏。"}</div></article>`).join("") : '<div class="empty"><p>还没有历史赛事记录。</p></div>'}</div>`;
+    tab.innerHTML = `<div class="grid two"><div class="control-card"><h2>收藏车辆等级分榜</h2><p class="muted">这里只显示已收藏车辆。计划收集不会出现在这里。</p><div class="table-wrap" style="margin-top:14px"><table class="standings-table"><thead><tr><th>排名</th><th>选手</th><th>车辆</th><th>等级分</th><th>收藏时间</th></tr></thead><tbody>${collected.map((entry, index) => `<tr><td>${index + 1}</td><td>${entry.character}</td><td><div class="table-entity vehicle-cell"><div>${vehicleVisual(entry)}</div><div class="muted small">${entry.vehicle} / ${entry.tires}${entry.glider ? ` / ${entry.glider}` : ""}</div></div></td><td>${formatRating(entry.rating)}</td><td>${formatDateOnly(entry.collectedAt)}</td></tr>`).join("")}</tbody></table></div></div><div class="control-card"><h2>数据工具</h2><p class="muted">仓库存档模式：启动时读取 <code>data/save-state.json</code>。电脑上保存为仓库存档后，再手动 git push，手机刷新即可看到进度。</p><div class="toolbar" style="margin-top:14px"><button class="secondary-btn" data-action="load-repository-save">从仓库存档恢复</button><button class="secondary-btn" data-action="save-repository-save">保存为仓库存档</button><button class="secondary-btn" data-action="export-state">导出全部数据</button><button class="secondary-btn" data-action="trigger-import">导入 JSON</button><button class="secondary-btn" data-action="reset-ratings">等级分恢复 1500</button><button class="danger-btn" data-action="clear-history">一键清除历史</button></div><input id="import-json-input" type="file" accept="application/json,.json" hidden /></div></div><div class="section-title" style="margin-top:22px"><div><h3>赛事历史</h3><p class="muted">历史记录也会被一起导出到 JSON。</p></div></div><div class="history-grid">${history.length ? history.map((event) => `<article class="history-card"><h3>${event.name}</h3><p class="muted small">创建 ${formatDateTime(event.createdAt)}${event.completedAt ? `，完赛 ${formatDateTime(event.completedAt)}` : "，尚未完赛"}</p><p class="muted small">参赛 ${event.participantIds.length} 车 / 轮次 ${event.rounds.length} / 计划 ${event.totalRounds}</p><div class="small">${standingsFor(event, false).filter((item) => item.entry.collected).slice(0, 3).map((item, index) => `<div>${index + 1}. ${item.entry.character} / ${item.entry.vehicle}${item.entry.glider ? ` + ${item.entry.glider}` : ""} (${formatScore(item.eventPoints)})</div>`).join("") || "该历史赛事中的车辆当前都未标记为收藏。"}</div></article>`).join("") : '<div class="empty"><p>还没有历史赛事记录。</p></div>'}</div>`;
   }
 
   function renderTabs() {
@@ -693,6 +752,20 @@
     const action = actionButton.dataset.action;
     if (action === "undo-last-heat") undoLastHeat();
     if (action === "export-state") exportStateToFile();
+    if (action === "load-repository-save") {
+      loadRepositoryState(false).then(() => {
+        alert("已从仓库存档读取当前状态。");
+      }).catch((error) => {
+        alert(`读取仓库存档失败：${error.message}`);
+      });
+    }
+    if (action === "save-repository-save") {
+      saveRepositoryStateToFile().then((message) => {
+        alert(message);
+      }).catch((error) => {
+        alert(`保存仓库存档失败：${error.message}`);
+      });
+    }
     if (action === "reset-ratings") resetRatings();
     if (action === "clear-history") clearHistory();
     if (action === "trigger-import") document.getElementById("import-json-input")?.click();
@@ -773,4 +846,5 @@
   });
 
   render();
+  loadRepositoryState(true).catch(() => {});
 })();
