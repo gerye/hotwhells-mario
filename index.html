@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>风火轮马里奥卡丁车赛事系统</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Hot Wheels Mario Kart Tournament System</p>
+          <h1>风火轮马里奥卡丁车比赛排位系统</h1>
+          <p class="hero-copy">
+            内置 MarioWiki 车辆库，支持收藏管理、5 赛道瑞士轮、逐 heat 成绩录入、等级分更新、历史回看与颁奖展示。
+          </p>
+        </div>
+        <div class="hero-stats" id="hero-stats"></div>
+      </header>
+
+      <nav class="tabs">
+        <button class="tab is-active" data-tab="home">主页</button>
+        <button class="tab" data-tab="collection">收藏库</button>
+        <button class="tab" data-tab="tournament">锦标赛</button>
+        <button class="tab" data-tab="ratings">等级分与历史</button>
+      </nav>
+
+      <main>
+        <section class="panel active" id="tab-home"></section>
+        <section class="panel" id="tab-collection"></section>
+        <section class="panel" id="tab-tournament"></section>
+        <section class="panel" id="tab-ratings"></section>
+      </main>
+    </div>
+
+    <script src="./data/karts-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
