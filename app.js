@@ -171,6 +171,14 @@
     );
   }
 
+  function stateRecordWeight(candidate) {
+    return (
+      Object.keys(candidate.collection || {}).length +
+      (candidate.historicalEvents || []).length +
+      (candidate.activeTournament ? 1 : 0)
+    );
+  }
+
   async function fetchRepositoryState() {
     const response = await fetch(REPOSITORY_SAVE_PATH, { cache: "no-store" });
     if (!response.ok) {
@@ -187,6 +195,14 @@
     }
     const localHasData = hasMeaningfulState(state);
     if (!localHasData) {
+      state = repoState;
+      saveState({ touch: false });
+      render();
+      return true;
+    }
+    const localWeight = stateRecordWeight(state);
+    const repoWeight = stateRecordWeight(repoState);
+    if (repoWeight > localWeight) {
       state = repoState;
       saveState({ touch: false });
       render();
