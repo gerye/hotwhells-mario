@@ -1,10 +1,10 @@
 {
   "collection": {
     "hdb28-kart-45": {
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": "",
-      "status": "planned"
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 565",
+      "status": "collected"
     },
     "baby-mario-standard-kart-standard-kart-4-pack-9-kart-43": {
       "collected": false,
@@ -33,22 +33,22 @@
       "collectionNote": "万博爱电王 460"
     },
     "hdb34-kart-3": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 565"
     },
     "glp38-kart-25": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 565"
     },
     "gjh63-kart-18": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 565"
     },
     "gvd33-glider-12": {
       "status": "uncollected",
@@ -57,70 +57,70 @@
       "collectionNote": ""
     },
     "gbg28-kart-15": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 565"
     },
     "gjh54-kart-36": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 565"
     },
     "grn17-kart-9": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 635"
     },
     "grn12-kart-44": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 635"
     },
     "glp37-kart-10": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 635"
     },
     "gbg29-kart-27": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 635"
     },
     "gbg30-kart-20": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 635"
     },
     "gjh59-kart-54": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 635"
     },
     "grn24-kart-39": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 635"
     },
     "grn25-kart-50": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 635"
     },
     "grn20-kart-22": {
-      "status": "planned",
-      "collected": false,
-      "collectedAt": "",
-      "collectionNote": ""
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-12",
+      "collectionNote": "亚马逊官方 565"
     }
   },
   "ratings": {
@@ -210,6 +210,6 @@
   "activeTournament": null,
   "historicalEvents": [],
   "_meta": {
-    "updatedAt": null
+    "updatedAt": "2026-04-12T08:37:48.972Z"
   }
 }
