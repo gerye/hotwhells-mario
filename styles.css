@@ -235,12 +235,22 @@ button:hover,
 }
 
 .collection-table-wrap {
-  overflow-x: auto;
-  max-height: 72vh;
+  overflow: auto;
+  max-height: 78vh;
 }
 
 .collection-table {
   min-width: 1450px;
+}
+
+.leaderboard-wrap {
+  overflow: auto;
+  max-height: 60vh;
+}
+
+.event-standings-wrap {
+  overflow: auto;
+  max-height: 62vh;
 }
 
 .collection-table thead th {
@@ -507,6 +517,12 @@ button:hover,
 
 .car-grid {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.home-cars-wrap {
+  max-height: 68vh;
+  overflow: auto;
+  padding-right: 6px;
 }
 
 .heat-grid {

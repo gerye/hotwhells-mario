@@ -121,6 +121,36 @@
       "collected": true,
       "collectedAt": "2026-04-12",
       "collectionNote": "亚马逊官方 565"
+    },
+    "hdb36-kart-6": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-13",
+      "collectionNote": "千里中央山田 880"
+    },
+    "gjh58-kart-16": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-13",
+      "collectionNote": "千里中央山田 880"
+    },
+    "hdb35-kart-19": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-13",
+      "collectionNote": "千里中央山田 880"
+    },
+    "glp39-kart-26": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-13",
+      "collectionNote": "千里中央山田 880"
+    },
+    "grn22-kart-35": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-13",
+      "collectionNote": "千里中央山田 880"
     }
   },
   "ratings": {
@@ -210,6 +240,6 @@
   "activeTournament": null,
   "historicalEvents": [],
   "_meta": {
-    "updatedAt": "2026-04-12T08:37:48.972Z"
+    "updatedAt": "2026-04-13T12:40:26.749Z"
   }
 }
