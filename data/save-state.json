@@ -151,6 +151,30 @@
       "collected": true,
       "collectedAt": "2026-04-13",
       "collectionNote": "千里中央山田 880"
+    },
+    "grn19-kart-28": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-18",
+      "collectionNote": "难波donki 900"
+    },
+    "gbg27-kart-11": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-18",
+      "collectionNote": "难波donki 900"
+    },
+    "hdb32-kart-38": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-18",
+      "collectionNote": "难波donki 900"
+    },
+    "hdb27-kart-24": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-18",
+      "collectionNote": "难波donki 900"
     }
   },
   "ratings": {
@@ -240,6 +264,6 @@
   "activeTournament": null,
   "historicalEvents": [],
   "_meta": {
-    "updatedAt": "2026-04-13T12:40:26.749Z"
+    "updatedAt": "2026-04-18T13:31:03.771Z"
   }
 }
