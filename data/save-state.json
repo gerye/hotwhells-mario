@@ -175,6 +175,12 @@
       "collected": true,
       "collectedAt": "2026-04-18",
       "collectionNote": "难波donki 900"
+    },
+    "custom-mario-movie-1-standard-snes-kart": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-04-21",
+      "collectionNote": "彩都西松屋 746"
     }
   },
   "ratings": {
@@ -239,6 +245,10 @@
     "grn13-kart-58": 1500,
     "hdb29-kart-59": 1500,
     "kamek-standard-kart-standard-kart-bowser-s-castle-raceway-track-set-kart-60": 1500,
+    "custom-mario-movie-1-standard-snes-kart": 1500,
+    "custom-toad-movie-1-standard-snes-kart": 1500,
+    "custom-donkey-kong-movie-1-standard-snes-kart": 1500,
+    "custom-koopa-troopa-movie-1-standard-snes-kart": 1500,
     "gvd31-glider-1": 1500,
     "mario-standard-kart-standard-parafoil-8-pack-1-glider-2": 1500,
     "hdb40-glider-3": 1500,
@@ -264,6 +274,6 @@
   "activeTournament": null,
   "historicalEvents": [],
   "_meta": {
-    "updatedAt": "2026-04-18T13:31:03.771Z"
+    "updatedAt": "2026-04-21T12:07:07.818Z"
   }
 }
