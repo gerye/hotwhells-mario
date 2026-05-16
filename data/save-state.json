@@ -181,6 +181,12 @@
       "collected": true,
       "collectedAt": "2026-04-21",
       "collectionNote": "彩都西松屋 746"
+    },
+    "gjh61-kart-51": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-05-16",
+      "collectionNote": "山田西松屋 770"
     }
   },
   "ratings": {
@@ -274,6 +280,6 @@
   "activeTournament": null,
   "historicalEvents": [],
   "_meta": {
-    "updatedAt": "2026-04-21T12:07:07.818Z"
+    "updatedAt": "2026-05-16T14:57:56.372Z"
   }
 }
