@@ -187,6 +187,24 @@
       "collected": true,
       "collectedAt": "2026-05-16",
       "collectionNote": "山田西松屋 770"
+    },
+    "gjh57-kart-40": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-05-31",
+      "collectionNote": "秋叶原骏河物 1000"
+    },
+    "gbg35-kart-31": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-07-02",
+      "collectionNote": "千里中央山田 891"
+    },
+    "grn15-kart-42": {
+      "status": "collected",
+      "collected": true,
+      "collectedAt": "2026-07-02",
+      "collectionNote": "千里中央山田 891"
     }
   },
   "ratings": {
@@ -280,6 +298,6 @@
   "activeTournament": null,
   "historicalEvents": [],
   "_meta": {
-    "updatedAt": "2026-05-16T14:57:56.372Z"
+    "updatedAt": "2026-07-02T04:14:49.299Z"
   }
 }
